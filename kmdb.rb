@@ -237,3 +237,8 @@ puts ""
 
 # Query the cast data and loop through the results to display the cast output for each movie.
 # TODO!
+
+roles=Role.find_by({"actor_id = "Christian Bale", "Michael Caine", "Liam Neeson", "Katie Homes", "Gary Oldman", "Heath Ledger", "Aaron Eckhart", "Maggie Gyllenhaal", "Tom Hardy", "Joseph Gordon-Levitt", "Anne Hathaway"})
+for role in roles     
+    puts "#{role["movie_id"]} #{role["actor_id"]} #{role["character_name"]}"
+end
