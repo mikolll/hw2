@@ -73,6 +73,10 @@
 
 # Generate models and tables, according to the domain model.
 # TODO!
+rails generate model Studio 
+rails generate model Movie 
+rails generate model Actor 
+rails generate model Role 
 
 # Insert data into the database that reflects the sample data shown above.
 # Do not use hard-coded foreign key IDs.
@@ -84,7 +88,12 @@ puts "======"
 puts ""
 
 # Query the movies data and loop through the results to display the movies output.
-# TODO!
+#TODO! 
+
+movies=Movie.find_by({"rated" => "PG-13"})
+for movie in movies 
+    puts "#{movie["title"]} #{movie["year_released"]} #{movie["rated"]} #{movie["studio_id"]}"
+end
 
 # Prints a header for the cast output
 puts ""
